@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwin Selvaraj - Software Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div id="three-container"></div>
+    <nav class="navbar">
+        <div class="nav-logo">MY PORTFOLIO</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="mobile-menu" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Ashwin Selvaraj</h1>
+            <p class="tagline slide-up">Turning Code into Impact 💻⚡</p>
+            <a href="#projects" class="cta-button bounce">See My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I'm a BCA student at PSG College of Arts and Science (Batch 2024–2027), passionate about software development, AI/ML, and building real-world tech solutions.</p>
+                <p>Currently focused on AI-based and backend-heavy projects, I love working with modern technologies like Supabase, Tailwind CSS,Flask, JavaScript, Python and various APIs to create impactful solutions.</p>
+                <div class="education">
+                    <h3>Education</h3>
+                    <p>Bachelor of Computer Applications (BCA)</p>
+                    <p>PSG College of Arts and Science</p>
+                    <p>2024 - 2027</p>
+                </div>
+                <a href="assets/resume.pdf" class="download-resume" download>
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div id="projects-particles-js" class="section-particles"></div>
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Bike Parking System</h3>
+                <p>Smart parking solution with real-time Databases, availability tracking and secure authentication.</p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>Tailwind CSS</span>
+                    <span>JavaScript</span>
+                    <span>React JS</span>
+                    <span>Supabase</span>
+
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/AshwinSelvaraj-19/THEERAN-PARKING" class="project-link"><i class="fab fa-github"></i></a>
+                    <a href=" https://ashwinselvaraj-19.github.io/THEERAN-PARKING/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>🚨 Emergency Route Optimizer</h3>
+                <p>An AI-driven system that ensures the fastest, real-time routes for emergency responders using smart location intelligence.</p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>Tailwind CSS</span>
+                    <span>JavaScript</span>
+                    <span>Google Maps API</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/AshwinSelvaraj-19/ERO" class="project-link"><i class="fab fa-github"></i></a>
+                    <a href="https://ashwinselvaraj-19.github.io/ERO/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>🎓 Scholarship Finder</h3>
+                <p>An AI-integrated web tool that uses natural language queries to instantly match students with scholarships tailored to their profile—eliminating the need for endless government site scrolling.</p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>Tailwind CSS</span>
+                    <span>AI AGENT</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/AshwinSelvaraj-19/SCHOLARSHIPFINDER" class="project-link"><i class="fab fa-github"></i></a>
+                    <a href="https://ashwinselvaraj-19.github.io/SCHOLARSHIPFINDER/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>AI Chatbot</h3>
+                <p>Intelligent conversational agent powered by DeepSeek API.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>DeepSeek API</span>
+                    <span>Flask</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-item">
+                    <span>Python</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Java</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>C++</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Web Technologies</h3>
+                <div class="skill-item">
+                    <span>HTML/CSS</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>JavaScript</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Flask</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Databases & Tools</h3>
+                <div class="skill-item">
+                    <span>MySQL</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Supabase</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>Git</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div id="contact-particles-js" class="section-particles"></div>
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/AshwinSelvaraj-19" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Ashwin Selvaraj. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/background.js"></script>
+</body>
+</html> 
