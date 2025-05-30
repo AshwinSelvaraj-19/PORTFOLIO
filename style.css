@@ -584,20 +584,22 @@ body {
         top: 0;
         right: -100%;
         height: 100vh;
-        width: 80%;
+        width: 100%;
         max-width: 400px;
         background-color: var(--background-color);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: right 0.3s ease;
+        transition: all 0.3s ease-in-out;
         backdrop-filter: blur(10px);
         border-left: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
     }
 
     .nav-links.active {
         right: 0;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     }
 
     .nav-links a {
@@ -622,27 +624,61 @@ body {
     .mobile-menu {
         display: block;
         z-index: 1001;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
     }
 
     .mobile-menu span {
         display: block;
-        width: 25px;
+        position: absolute;
         height: 2px;
+        width: 100%;
         background-color: var(--text-color);
-        margin: 5px 0;
-        transition: all 0.3s ease;
+        transition: all 0.3s ease-in-out;
     }
 
+    .mobile-menu span:nth-child(1) { top: 0; }
+    .mobile-menu span:nth-child(2) { top: 9px; }
+    .mobile-menu span:nth-child(3) { top: 18px; }
+
     .mobile-menu.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg);
+        top: 9px;
     }
 
     .mobile-menu.active span:nth-child(2) {
         opacity: 0;
+        transform: translateX(-20px);
     }
 
     .mobile-menu.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg);
+        top: 9px;
+    }
+
+    /* Add overlay when menu is active */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 
     .hero-content h1 {
@@ -730,4 +766,252 @@ body {
 
 #contact-particles-js {
     opacity: 0.2;
+}
+
+/* Mobile and Tablet Responsive Styles */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+
+    /* About Section */
+    .about {
+        padding: 4rem 1.5rem;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .education {
+        padding: 1.5rem;
+    }
+
+    /* Projects Section */
+    .projects {
+        padding: 4rem 1.5rem;
+    }
+
+    .projects h2 {
+        font-size: 2rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .project-tech span {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+        margin: 0;
+    }
+
+    /* Skills Section */
+    .skills {
+        padding: 4rem 1.5rem;
+    }
+
+    .skills h2 {
+        font-size: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 4rem 0;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-info {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+
+    .contact-description {
+        font-size: 1rem;
+    }
+
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 2rem 1.5rem;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* About Section */
+    .about h2,
+    .projects h2,
+    .skills h2,
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    /* Project Cards */
+    .project-card {
+        padding: 1.2rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-tech span {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+    }
+
+    /* Contact Form */
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 6rem 1rem;
+    }
+
+    .hero-content {
+        margin-top: 2rem;
+    }
+
+    .nav-links {
+        padding: 1rem 0;
+    }
+}
+
+/* High-DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --card-bg: #1e293b;
+        --background-color: #0f172a;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .nav-links,
+    .cta-button,
+    .contact-form,
+    .social-links {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .about,
+    .projects,
+    .skills {
+        page-break-inside: avoid;
+    }
 } 
