@@ -10,14 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
+    <div class="scroll-progress"></div>
     <div id="particles-js"></div>
     <div id="three-container"></div>
     <nav class="navbar">
         <div class="nav-logo">MY PORTFOLIO</div>
         <div class="nav-links">
-            <a href="#home">Home</a>
+            <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
@@ -192,23 +194,65 @@
 
     <section id="contact" class="contact">
         <div id="contact-particles-js" class="section-particles"></div>
-        <h2>Get In Touch</h2>
         <div class="contact-container">
-            <form id="contact-form" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p class="contact-description">Not sure what you need? The team will be happy to listen to you and suggest ideas you hadn't considered.</p>
+                <div class="contact-details">
+                    <a href="mailto:ashwinselvaraj19@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        ashwinselvaraj19@gmail.com
+                    </a>
+                    <a href="tel:+1234567890" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                        +91 9790063169
+                    </a>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+            </div>
+            <div class="contact-form-container">
+                <div class="form-header">
+                    <h3>We'd love to hear from you!</h3>
+                    <p>Let's get in touch</p>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone number</label>
+                            <div class="phone-input">
+                                <select name="countryCode" id="countryCode">
+                                    <option value="US">US</option>
+                                    <option value="UK">UK</option>
+                                    <option value="IN">IN</option>
+                                </select>
+                                <input type="tel" id="phone" name="phone" placeholder="enter your number here">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
