@@ -1,17 +1,33 @@
 // Mobile Menu Toggle
 const mobileMenu = document.querySelector('.mobile-menu');
 const navLinksContainer = document.querySelector('.nav-links');
+const navOverlay = document.querySelector('.nav-overlay');
 
-mobileMenu.addEventListener('click', () => {
+function toggleMenu() {
     mobileMenu.classList.toggle('active');
     navLinksContainer.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+    document.body.style.overflow = navLinksContainer.classList.contains('active') ? 'hidden' : '';
+}
+
+mobileMenu.addEventListener('click', toggleMenu);
+navOverlay.addEventListener('click', toggleMenu);
+
+// Close menu when clicking a link
+navLinksContainer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinksContainer.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!mobileMenu.contains(e.target) && !navLinksContainer.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-        navLinksContainer.classList.remove('active');
+    if (!mobileMenu.contains(e.target) && 
+        !navLinksContainer.contains(e.target) && 
+        navLinksContainer.classList.contains('active')) {
+        toggleMenu();
     }
 });
 
@@ -72,8 +88,7 @@ skillsObserver.observe(skillsSection);
 
 // Initialize EmailJS
 (function() {
-    // Replace with your EmailJS public key
-    emailjs.init("NAIB_qppj2i0pzoaX");
+    emailjs.init("service_er79tcf"); // Your EmailJS service ID
 })();
 
 // Form Submission
@@ -100,10 +115,9 @@ contactForm.addEventListener('submit', async (e) => {
     
     try {
         // Send email using EmailJS
-        // Replace with your EmailJS service ID and template ID
         await emailjs.send(
-            "service_er79tcf",
-            "template_feju70r",
+            "service_er79tcf", // Your EmailJS service ID
+            "template_srvbanu", // Your EmailJS template ID
             {
                 to_name: "Ashwin",
                 from_name: formData.fullName,
