@@ -314,7 +314,7 @@ body {
 .skill-category {
     background-color: var(--card-bg);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 13px;
 }
 
 .skill-category h3 {
